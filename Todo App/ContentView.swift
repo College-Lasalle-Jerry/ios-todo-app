@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var listViewModel: ListViewModel = ListViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        NavigationView{
+            NoListView()
+        }.environmentObject(listViewModel)
     }
 }
 
